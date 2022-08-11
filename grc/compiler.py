@@ -58,10 +58,8 @@ def main(args=None):
     out_dir = args.output if not args.user_lib_dir else platform.config.hier_block_lib_dir
     if os.path.exists(out_dir):
         pass  # all is well
-    elif args.save_to_lib:
-        os.mkdir(out_dir)  # create missing hier_block lib directory
     else:
-        exit('Error: Invalid output directory')
+        os.mkdir(out_dir)  # create missing hier_block lib directory
 
     Messages.send_init(platform)
     flow_graph = file_path = None
